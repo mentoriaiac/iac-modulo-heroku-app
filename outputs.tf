@@ -1,19 +1,7 @@
-data "local_file" "ferramenta_1" {
-  filename   = "${path.root}/${var.ferramenta_1}.txt"
-  depends_on = [local_file.ferramenta-1]
+output "heroku_app_id" {
+  value = heroku_app.app.id
 }
 
-data "local_file" "ferramenta_2" {
-  filename   = "${path.root}/${var.ferramenta_2}.txt"
-  depends_on = [local_file.ferramenta-2]
+output "heroku_app_name" {
+  value = heroku_app.app.name
 }
-
-output "ferramentas" {
-  description = "exemplo de saidas"
-  value = [
-    data.local_file.ferramenta_1.content,
-    data.local_file.ferramenta_2.content,
-
-  ]
-}
-

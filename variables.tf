@@ -1,14 +1,10 @@
-variable "programa" {
-  description = "exemplo de variavel"
-  default     = "mentoria-iac"
+variable "name" {
+  description = "(Required) The name of the application. In Heroku, this is also the unique ID, so it must be unique and have a minimum of 3 characters."
+  type        = string
 }
 
-variable "ferramenta_1" {
-  description = "exemplo de variavel"
-  default     = "terraform"
-}
-
-variable "ferramenta_2" {
-  description = "exemplo de variavel"
-  default     = "ansible"
+variable "region" {
+  description = "(Required) The region that the app should be deployed in."
+  type        = string
+  default     = "us"
 }
