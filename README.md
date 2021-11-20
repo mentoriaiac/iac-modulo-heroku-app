@@ -27,10 +27,10 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_app_config_vars"></a> [app\_config\_vars](#input\_app\_config\_vars) | (Required) The config vars for the app. | `map` | `{}` | no |
-| <a name="input_app_config_vars_sensitive"></a> [app\_config\_vars\_sensitive](#input\_app\_config\_vars\_sensitive) | (Required) The config vars for the app, with sensitive values masked. | `map` | `{}` | no |
-| <a name="input_name"></a> [name](#input\_name) | (Required) The name of the application. In Heroku, this is also the unique ID, so it must be unique and have a minimum of 3 characters. | `string` | n/a | yes |
-| <a name="input_region"></a> [region](#input\_region) | (Required) The region that the app should be deployed in. | `string` | `"us"` | no |
+| <a name="input_app_config_vars"></a> [app\_config\_vars](#input\_app\_config\_vars) | The config vars for the app. | `map` | `{}` | no |
+| <a name="input_app_config_vars_sensitive"></a> [app\_config\_vars\_sensitive](#input\_app\_config\_vars\_sensitive) | The config vars for the app, with sensitive values masked. | `map` | `{}` | no |
+| <a name="input_name"></a> [name](#input\_name) | The name of the application. In Heroku, this is also the unique ID, so it must be unique and have a minimum of 3 characters. | `string` | n/a | yes |
+| <a name="input_region"></a> [region](#input\_region) | The region that the app should be deployed in. | `string` | `"us"` | no |
 
 ## Outputs
 
