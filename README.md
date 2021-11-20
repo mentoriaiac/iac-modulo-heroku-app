@@ -1,3 +1,7 @@
+# iac-modulo-heroku-app
+
+Esse módulo tem como objetivo facilitar a automação na criação e configuração de aplicações no Heroku.
+
 ## Requirements
 
 | Name | Version |
