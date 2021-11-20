@@ -1,6 +1,13 @@
 resource "heroku_app" "app" {
   name   = var.name
   region = var.region
+  
+  organization {
+    name = var.organization.name
+    locked = var.organization.locked
+    personal = var.organization.personal
+  }
+
 }
 
 resource "heroku_config" "config_vars" {
