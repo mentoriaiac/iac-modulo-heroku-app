@@ -8,3 +8,15 @@ variable "region" {
   type        = string
   default     = "us"
 }
+#define config vars heroku app
+variable "app_config_vars" {
+  description = "(Required) The config vars for the app."
+  type        = map
+  default     = {}
+}
+
+variable "app_config_vars_sensitive" {
+  description = "(Required) The config vars for the app, with sensitive values masked."
+  type        = map
+  default     = {}
+}
