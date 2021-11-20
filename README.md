@@ -1,62 +1,45 @@
-##  Template Modulo Terraform
-Este repositorio deve conter a estrutura básica para a criação de uma modulo do [terraform](https://www.terraform.io/). 
-
- $`` module-example/``
- 
- |--- main.tf  
- |--- variable.tf  
- |--- outputs.tf  
- |--- version.tf
-
- Esses são os nomes de arquivos recomendados para um modulo mínimo, mesmo se estiverem vazios. 
- 
- ``main.tf`` deve ser o ponto de entrada principal.
- Para um modulo simples, pode ser aqui que todos os recursos que são criados. Para uma modulo complexo pode ser divido em varios arquivos.
- 
- ``variables.tf e outputs.tf`` deve conter as declarações das variaves e as saidas respectivamente.
- 
- ``versions.tf`` deve contem as versões dos recursos/provedores
-
 ## Requirements
 
 | Name | Version |
 |------|---------|
-| Terraform | >= 0.13.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.0 |
+| <a name="requirement_heroku"></a> [heroku](#requirement\_heroku) | ~> 4.0 |
 
 ## Providers
-  
+
 | Name | Version |
 |------|---------|
-| local | n/a |
+| <a name="provider_heroku"></a> [heroku](#provider\_heroku) | ~> 4.0 |
+
+## Modules
+
+No modules.
 
 ## Resources
 
 | Name | Type |
 |------|------|
-| local_file | resource |
-| local_file | data source |
+| [heroku_app.app](https://registry.terraform.io/providers/heroku/heroku/latest/docs/resources/app) | resource |
+| [heroku_app_config_association.foobar](https://registry.terraform.io/providers/heroku/heroku/latest/docs/resources/app_config_association) | resource |
+| [heroku_config.config_vars](https://registry.terraform.io/providers/heroku/heroku/latest/docs/resources/config) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-|ferramenta_1 | exemplo de variavel | `string` | `"terraform"` | no |
-|ferramenta_2 | exemplo de variavel | `string` | `"ansible"` | no |
-|programa | exemplo de variavel | `string` | `"mentoria-iac"` | no |
+| <a name="input_app_config_vars"></a> [app\_config\_vars](#input\_app\_config\_vars) | (Required) The config vars for the app. | `map` | `{}` | no |
+| <a name="input_app_config_vars_sensitive"></a> [app\_config\_vars\_sensitive](#input\_app\_config\_vars\_sensitive) | (Required) The config vars for the app, with sensitive values masked. | `map` | `{}` | no |
+| <a name="input_name"></a> [name](#input\_name) | (Required) The name of the application. In Heroku, this is also the unique ID, so it must be unique and have a minimum of 3 characters. | `string` | n/a | yes |
+| <a name="input_region"></a> [region](#input\_region) | (Required) The region that the app should be deployed in. | `string` | `"us"` | no |
 
 ## Outputs
- 
+
 | Name | Description |
 |------|-------------|
-|ferramentas | exemplo de saida |
-
-## Testar localmente
-
-Aqui você descreve como a pessoa que utilizar esse módulo pode testar localmente. Coloque todos os detalhes necessários para executar localmente.
-
-## Exemplos
-
-A pasta ``how-to-use-this-module`` contém exemplos de utilização do módulo. Esta abordagem é interessante para auxiliar na exeperiência de quem for utilizar este módulo no futuro. Já foi criado um arquivo terraform chamado `terrafile.tf` e ele deve ser usado como referência pra colocar dentro deste diretório de exemplos.
+| <a name="output_heroku_app_id"></a> [heroku\_app\_id](#output\_heroku\_app\_id) | n/a |
+| <a name="output_heroku_app_name"></a> [heroku\_app\_name](#output\_heroku\_app\_name) | n/a |
 
 
-  
+## Como usar este módulo:
+
+Para saber mais como usar este modulo [acesse este documento](how-to-use-this-module/README.md)
