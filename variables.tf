@@ -1,22 +1,32 @@
 variable "name" {
-  description = "(Required) The name of the application. In Heroku, this is also the unique ID, so it must be unique and have a minimum of 3 characters."
+  description = "O nome da aplicação. No heroku isso precisa ser um ID único para toda internet e ao menos 3 caracteres."
   type        = string
 }
 
 variable "region" {
-  description = "(Required) The region that the app should be deployed in."
+  description = "A região que a aplicação será criada."
   type        = string
   default     = "us"
 }
 #define config vars heroku app
 variable "app_config_vars" {
-  description = "(Required) The config vars for the app."
+  description = "O map com as variáveis que devem ser criadas na aplicação."
   type        = map
   default     = {}
 }
 
 variable "app_config_vars_sensitive" {
-  description = "(Required) The config vars for the app, with sensitive values masked."
+  description = "O map com as variáveis que devem ser criadas na aplicação, mas com os valores mascarados para evitar que as pessoas vejam facilmente."
   type        = map
   default     = {}
+}
+
+variable "organization" { 
+  description = "Definição de qual organização será usada"
+  type = map
+  default = { 
+    name = "personal"
+    locked = false
+    personal = true
+  }
 }
